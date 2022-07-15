@@ -1,0 +1,42 @@
+
+<div class="page">
+<section class="post pb-4">
+<div class="container-md">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4 pb-4">
+      <% @posts.each do |post| %>
+        <div class="col">
+          <div class="card h-100">  
+            <%= link_to post do %>
+              <%= image_tag(@post.author_post_url) %>
+              <div class="card-body pb-0">
+                <h5 "card-title fw-bold mb-1"><%= post.title %></h5>
+                <div class="card-text"><%= truncate(post.description, length: 60) %></div>
+              </div>
+              <div class="card-footer pt-0">
+              
+                <div class="d-flex align-items-center">
+                  <div class="small fw-bold"><%= post.author.name %></div>
+                  <div class="small text-muted">
+                    <%= time_ago_in_words(post.created_at) %>
+                  </div>
+                </div>
+             </div>   
+            <% end %>
+
+                  <div class="small text-muted">
+                    <%= link_to post do %>
+                      <span class="icon"><i class="fa fa-comment"></i></span>
+                      <%= post.comments.count %>
+                    <% end %>
+                  </div>
+
+               
+            
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>  
+
+  
+  

@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+*,
+* ::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 80px; 
+    background-color: whitesmoke;
+    min-height: 100vh;
+     
+} 
+
+@font-face {
+    font-family: 'Quicksand', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto+Mono:wght@100&display=swap");
+}
+
+
+
+.card-img-top {
+    padding-top: 1rem;
+    height: 23rem;
+    width:80%;
+    min-height: 15rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-img-top2 {
+    width:50%;
+    height:50%;
+    margin:50px auto 60px;
+    align-items: center;
+}
+    
+.card {
+    box-shadow: 0px 3px 4px gray;
+}
+    
+/* .form-control{
+	width: 90%;
+	padding: 12px 20px;
+	height: auto;
+} */
+
+/* .label {
+    margin-right: 1rem;
+    text-align: right;
+    clear: both;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    margin-left: 1rem;
+    
+}
+
+.input {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.email {
+    margin-right: 1 rem;
+}
+
+.textarea {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+} */
+
+
+.form-control{
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    margin-right: 1rem
+    
+}
+
+#previewImage {
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+

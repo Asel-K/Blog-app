@@ -1,0 +1,48 @@
+<div class = "conatiner">
+ <form>
+  <fieldset>
+    <h2>Sign up</h2>
+    
+
+
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <form class="form text-center">
+        <div class="form-group mb-2">
+          <%= f.input :name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { class: "form-control col-sm-10" }, label_html: { class: "col-sm-2 col-form-label" }, :required => false  %>
+        </div>
+        <div class="form-group row">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email", class: "form-control col-sm-10" }, label_html: { class: "col-sm-2 col-form-label" } , :required => false %>
+        </div>
+        <div class="form-group row"> 
+          <%= f.input :password,
+                      required: true,
+                      input_html: { class: "form-control col-sm-10" }, label_html: { class: "col-sm-2 col-form-label" }, :required => false, 
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        </div>
+        <div class="form-group row">
+                      <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { class: "form-control col-sm-10" }, label_html: { class: "col-sm-2 col-form-label" }, :required => false  %>
+        </div>
+      </form>
+      
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+  
+
+    
+    <%= render "devise/shared/links" %>
+    
+    </form>
+</div>

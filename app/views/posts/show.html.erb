@@ -1,0 +1,56 @@
+<div class="page">  
+    <div class="container2">
+      
+          
+        <h3 "card-title fw-bold mb-1"><%= @post.title %></h3>
+        <div class="col">
+          <span>by</span>
+            <div class="small fw-bold"><%= @post.author.name %></div>
+            <div class="post-time"><span>posted</span>
+              <span><%= verbose_date(@post.created_at) %></span></div>
+            </div>	
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <%= image_tag @post.author_post_url, class: "card-img-top2" %>
+          
+            <% if author_signed_in? && (current_author.id == @post.author_id) %>		
+              <div class="btn btn-secondary">
+                <%= link_to 'Edit', edit_post_path(@post), class: "button" %>
+                <%= link_to 'Delete', post_path, class: "button", method: :delete, data: { confirm: 'Are you sure you want to delete this post?'} %>
+              </div>
+            <% end %>
+
+            <div class="card-text">
+              <%= @post.description %>
+            </div>
+
+            <section class="comments">
+              <div class="panel-block comments data">
+                <span class="icon"><i class="fa fa-comment"></i></span>
+                <%= pluralize(@post.comments.count, 'Comment') %>
+          
+                
+                  <%= render @post.comments %>
+                <hr />
+
+                <% if author_signed_in? %>
+                  <div class="comment-form">
+                    <h3 class="subtitle is-3">Leave a comment</h3>
+                    <%= render 'comments/form' %>
+                  </div>
+                <% else %>
+                  <div class="content"><%= link_to 'Sign in', new_author_session_path %> to leave a comment.</div>
+                <% end %>
+              </div>
+            </section>
+
+                
+
+          </div>
+          
+        </div>
+    </div>
+
+</div>

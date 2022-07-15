@@ -1,0 +1,9 @@
+<div class="container text-center">
+    <h1>Your New Post</h1>
+
+    <%= render 'form', post: @post %>
+    <%= javascript_pack_tag 'posts' %>
+
+    <%= link_to 'Back', posts_path %>
+</div>
+
